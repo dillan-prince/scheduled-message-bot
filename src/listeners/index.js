@@ -34,10 +34,13 @@ export const onMessage = (message) => {
 
         const hoursInt = parseInt(hours);
 
+        console.log(`hoursInt: ${hoursInt} ; period: ${period}`);
+
         if (
             (hoursInt >= 8 && period === 'AM') ||
             (hoursInt <= 4 && period === 'PM')
         ) {
+            console.log('Sending check-in message.');
             message.channel.send('<@229105932993429504> how are you?');
         }
     }, 60000);
