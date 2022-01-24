@@ -23,7 +23,7 @@ export const onMessage = message => {
       })
     ).getHours();
 
-    console.log(`hours: ${currentHour}`);
+    console.log(`Current hour: ${currentHour}`);
 
     if (8 <= currentHour && currentHour <= 16) {
       console.log("Sending check-in message.");
