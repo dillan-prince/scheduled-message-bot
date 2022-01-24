@@ -43,5 +43,5 @@ export const onMessage = (message) => {
             console.log('Sending check-in message.');
             message.channel.send('<@229105932993429504> how are you?');
         }
-    }, 60000);
+    }, 1000 * 60 * 60);
 };
