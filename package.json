@@ -1,0 +1,19 @@
+{
+    "name": "scheduled-message-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "discord.js": "^12.3.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.7.0",
+        "nodemon": "^2.0.15"
+    }
+}
