@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 
-import { CHECK_IN_CHANNEL_ID } from "./common/constants.js";
+import { CHECK_IN_CHANNEL_ID, QUESTIONS } from "./common/constants.js";
 import { Keys } from "./config/index.js";
 
 const keys = await Keys();
@@ -23,6 +23,8 @@ client.on("ready", () => {
     setInterval(() => sendCheckIn(channel), 1000 * 60 * 60);
   }, msUntilThirtyAfter);
 });
+
+client.login(keys.DISCORD_TOKEN);
 
 const getMsUntilThirtyAfter = () => {
   const currentDate = new Date();
@@ -50,8 +52,10 @@ const sendCheckIn = (channel) => {
 
   if (8 <= currentHour && currentHour <= 16) {
     console.log("Sending check-in message.");
-    channel.send("<@229105932993429504> how are you?");
+    channel.send(`<@229105932993429504>, ${getRandomQuestion}`);
   }
 };
 
-client.login(keys.DISCORD_TOKEN);
+const getRandomQuestion = () => {
+  return QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+};
