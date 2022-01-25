@@ -1,1 +1,2 @@
-export const COMMAND_PREFIX = '$';
+export const COMMAND_PREFIX = "$";
+export const CHECK_IN_CHANNEL_ID = "932469593543413780";
