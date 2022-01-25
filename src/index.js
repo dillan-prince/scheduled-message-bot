@@ -52,10 +52,8 @@ const sendCheckIn = (channel) => {
 
   if (8 <= currentHour && currentHour <= 16) {
     console.log("Sending check-in message.");
-    channel.send(`<@229105932993429504>, ${getRandomQuestion}`);
+    channel.send(`<@229105932993429504>, ${getRandomQuestion()}`);
   }
 };
 
-const getRandomQuestion = () => {
-  return QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
-};
+const getRandomQuestion = () => QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
