@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 
-import { CHECK_IN_CHANNEL_ID, QUESTIONS } from "./common/constants.js";
+import { CHECK_IN_CHANNEL_ID, CHECK_IN_USER_ID, QUESTIONS } from "./common/constants.js";
 import { Keys } from "./config/index.js";
 
 const keys = await Keys();
@@ -56,7 +56,7 @@ const sendCheckIn = (channel) => {
 
   if (8 <= currentHour && currentHour <= 16 && currentDay <= 5) {
     console.log("Sending check-in message.");
-    channel.send(`<@229105932993429504>, ${getRandomQuestion()}`);
+    channel.send(`<@${CHECK_IN_USER_ID}>, ${getRandomQuestion()}`);
   }
 };
 

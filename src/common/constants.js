@@ -1,5 +1,6 @@
 export const COMMAND_PREFIX = "$";
 export const CHECK_IN_CHANNEL_ID = "932469593543413780";
+export const CHECK_IN_USER_ID = "229105932993429504";
 export const QUESTIONS = [
   "how are you?",
   "what's the worst FFXIV race/gender combination?",
