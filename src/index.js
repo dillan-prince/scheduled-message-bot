@@ -43,15 +43,18 @@ const getMsUntilThirtyAfter = () => {
 };
 
 const sendCheckIn = (channel) => {
-  const currentHour = new Date(
+  const now = new Date(
     new Date().toLocaleString("en-US", {
       timeZone: "America/Chicago",
     })
-  ).getHours();
+  );
+
+  const currentHour = now.getHours();
+  const currentDay = now.getDay();
 
   console.log(`Current hour: ${currentHour}`);
 
-  if (8 <= currentHour && currentHour <= 16) {
+  if (8 <= currentHour && currentHour <= 16 && currentDay <= 5) {
     console.log("Sending check-in message.");
     channel.send(`<@229105932993429504>, ${getRandomQuestion()}`);
   }
