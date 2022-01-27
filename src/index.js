@@ -16,7 +16,6 @@ client.on("ready", () => {
 
   const msUntilThirtyAfter = getMsUntilThirtyAfter();
   const channel = client.channels.cache.get(CHECK_IN_CHANNEL_ID);
-  console.log("Working with channel:", channel);
 
   console.log(`Waiting ${msUntilThirtyAfter}ms before sending check-in.`);
   setTimeout(() => {
