@@ -42,21 +42,24 @@ const getMsUntilThirtyAfter = () => {
 };
 
 const sendCheckIn = (channel) => {
-  const now = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: "America/Chicago",
-    })
-  );
-
-  const currentHour = now.getHours();
-  const currentDay = now.getDay();
-
-  console.log(`Current hour: ${currentHour}`);
-
-  if (8 <= currentHour && currentHour <= 16 && currentDay <= 5) {
+  if (shouldSendCheckin()) {
     console.log("Sending check-in message.");
     channel.send(`<@${CHECK_IN_USER_ID}>, ${getRandomQuestion()}`);
   }
 };
+
+const shouldSendCheckin = () => {
+  const now = new Date(
+    new Date().toLocaleString('en-US', {
+      timeZone: 'America/Chicago'
+    })
+  );
+
+  const hours = now.getHours();
+  const day = now.getDay();
+
+  console.log(`Current hour: ${hours}; Current day: ${day}`);
+  return 8 <= hours && hours <= 16 && 1 <= day && day <= 5;
+}
 
 const getRandomQuestion = () => QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
